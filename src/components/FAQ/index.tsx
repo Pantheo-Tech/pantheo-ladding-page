@@ -15,7 +15,10 @@ export default function FrequentQuestions() {
   };
 
   return (
-    <section className="px-4 sm:px-10 lg:px-30 py-10 bg-gray-100 flex flex-col items-center gap-10">
+    <section
+      id="faq"
+      className="px-4 sm:px-10 lg:px-30 py-10 bg-gray-100 flex flex-col items-center gap-10"
+    >
       <Title text="FAQ" />
       <div className="w-full max-w-4xl">
         {FAQ.map(({ question, answer }, index) => (
@@ -39,7 +42,7 @@ export default function FrequentQuestions() {
                   src={ArrowIcon}
                   alt="Expandir"
                   className={`w-6 h-6 transition-transform duration-300 ${
-                    expanded === `panel${index}` ? "rotate-180" : "rotate-0"
+                    expanded === `panel${index}` ? "rotate-180" : "rotate-180"
                   } text-blue-500`}
                 />
               }
