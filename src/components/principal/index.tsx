@@ -1,4 +1,4 @@
-import Button from "../button";
+import ButtonComponent from "../button";
 import image from "../../assets/img/principal.svg";
 
 export default function Principal() {
@@ -15,10 +15,10 @@ export default function Principal() {
           entregamos inovação com qualidade e eficiência.
         </p>
         <div className="mt-6 flex justify-center lg:justify-start">
-          <Button
+          <ButtonComponent
             text="Entre em contato"
-            onClick={() => {}}
             className="bg-button"
+            whatsapp="5521970709117"
           />
         </div>
       </div>

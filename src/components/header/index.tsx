@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full top-0 left-0 z-50 bg-gray-900 text-white transition-all duration-300 ${
+      className={`bg-background w-full top-0 left-0 z-50 text-white transition-all duration-300 ${
         scrolled ? "shadow-md py-3 fixed" : "flex py-4 h-40"
       }`}
     >
@@ -79,7 +79,7 @@ export default function Header() {
           <Button
             text="Entre em contato"
             className="bg-button hover:text-button"
-            onClick={() => {}}
+            whatsapp="5521970709117"
           />
         </div>
       </div>
