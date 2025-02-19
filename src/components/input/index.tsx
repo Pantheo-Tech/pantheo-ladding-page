@@ -39,7 +39,17 @@ export default function InputComponent({
           placeholder={placeholder}
           disabled={disabled}
           maxLength={label === "Telefone" ? 11 : undefined}
+          inputMode={label === "Telefone" ? "numeric" : undefined}
           minLength={label === "Telefone" ? 11 : undefined}
+          onInput={(e) => {
+            if (label === "Telefone") {
+              (e.target as HTMLInputElement).value = (
+                e.target as HTMLInputElement
+              ).value
+                .replace(/\D/g, "")
+                .slice(0, 11);
+            }
+          }}
           {...register}
         />
       </div>
