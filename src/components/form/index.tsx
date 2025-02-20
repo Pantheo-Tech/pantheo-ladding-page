@@ -21,12 +21,6 @@ export default function ContactForm() {
     defaultValues: { services: [] },
   });
 
-  console.log(
-    import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
-    import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
-    import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
-  );
-
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data: FormSchema) => {
