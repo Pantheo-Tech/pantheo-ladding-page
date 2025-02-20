@@ -24,9 +24,11 @@ jobs:
 
       - name: 🔧 Criar arquivo .env no servidor
         run: |
-          echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" > .env
+          touch .env
+          echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" >> .env
           echo "VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}" >> .env
           echo "VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" >> .env
+          cat .env  # Mostra o conteúdo do .env no log para depuração
 
       - name: Build
         run: npm run build
@@ -38,4 +40,4 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           server-dir: ./
-          local-dir: ./dist/
+          local-dir: ./
