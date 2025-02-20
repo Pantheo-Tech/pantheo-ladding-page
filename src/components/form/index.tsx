@@ -21,6 +21,12 @@ export default function ContactForm() {
     defaultValues: { services: [] },
   });
 
+  console.log(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+  );
+
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data: FormSchema) => {
@@ -41,8 +47,8 @@ export default function ContactForm() {
     setLoading(true);
     try {
       const response = await emailjs.send(
-        "service_lf5pj8z",
-        "contact_form",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
         {
           from_name: data.name,
           company: data.company,
@@ -51,7 +57,7 @@ export default function ContactForm() {
           services: data.services.join(", "),
           message: data.message || "Sem mensagem",
         },
-        "eigy8G7prjODn5kms"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
       );
 
       if (response.status === 200) {
